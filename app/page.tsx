@@ -55,20 +55,20 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="px-4 py-20 sm:px-6 lg:px-8 lg:py-32">
         <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+          <h1 className="animate-slide-in-up text-balance text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
             Full-Stack Developer Building the Future
           </h1>
-          <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl">
+          <p className="animate-slide-in-up mt-6 text-pretty text-lg leading-relaxed text-muted-foreground sm:text-xl" style={{ animationDelay: '0.1s' }}>
             I create accessible, performant web applications that solve real problems. Passionate about clean code, user experience, and continuous learning.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button asChild size="lg" className="gap-2">
+            <Button asChild size="lg" className="gap-2 transition-smooth hover:scale-105" style={{ animation: 'fadeInScale 0.6s ease-out 0.2s both' }}>
               <Link href="/projects">
                 View Projects
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="gap-2 bg-transparent">
+            <Button asChild variant="outline" size="lg" className="gap-2 bg-transparent transition-smooth hover:scale-105" style={{ animation: 'fadeInScale 0.6s ease-out 0.3s both' }}>
               <Link href="/blog">
                 Read Blog
                 <BookOpen className="h-4 w-4" />
@@ -80,17 +80,17 @@ export default function HomePage() {
 
       {/* Featured Projects */}
       <section className="border-t border-border bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-12 flex items-center justify-between">
+        <div className="mb-12 flex items-center justify-between animate-slide-in-left">
           <div>
             <div className="flex items-center gap-2">
-              <Code2 className="h-6 w-6 text-primary" />
+              <Code2 className="h-6 w-6 text-primary animate-float" />
               <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
             </div>
             <p className="mt-2 text-muted-foreground">
               Real-world applications showcasing technical skills and problem-solving
             </p>
           </div>
-          <Button asChild variant="ghost" className="gap-2">
+          <Button asChild variant="ghost" className="gap-2 transition-smooth hover:scale-105">
             <Link href="/projects">
               View All
               <ArrowRight className="h-4 w-4" />
@@ -99,8 +99,8 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <Card key={project.title} className="flex flex-col transition-shadow hover:shadow-lg">
+          {featuredProjects.map((project, index) => (
+            <Card key={project.title} className="flex flex-col transition-smooth hover:shadow-lg hover:scale-105" style={{ animation: `slideInUp 0.6s ease-out ${0.1 * (index + 1)}s both` }}>
               <CardHeader>
                 <CardTitle className="text-balance">{project.title}</CardTitle>
                 <CardDescription className="text-pretty">{project.description}</CardDescription>
@@ -127,17 +127,17 @@ export default function HomePage() {
 
       {/* Recent Blog Posts */}
       <section className="px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-12 flex items-center justify-between">
+        <div className="mb-12 flex items-center justify-between animate-slide-in-right">
           <div>
             <div className="flex items-center gap-2">
-              <BookOpen className="h-6 w-6 text-primary" />
+              <BookOpen className="h-6 w-6 text-primary animate-float" style={{ animationDelay: '0.3s' }} />
               <h2 className="text-3xl font-bold tracking-tight">Latest Writing</h2>
             </div>
             <p className="mt-2 text-muted-foreground">
               Technical insights and lessons learned from building software
             </p>
           </div>
-          <Button asChild variant="ghost" className="gap-2">
+          <Button asChild variant="ghost" className="gap-2 transition-smooth hover:scale-105">
             <Link href="/blog">
               View All
               <ArrowRight className="h-4 w-4" />
@@ -146,8 +146,8 @@ export default function HomePage() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {recentPosts.map((post) => (
-            <article key={post.title} className="group">
+          {recentPosts.map((post, index) => (
+            <article key={post.title} className="group transition-smooth hover:scale-105" style={{ animation: `slideInUp 0.6s ease-out ${0.1 * (index + 1)}s both` }}>
               <div className="mb-3 flex items-center gap-3 text-sm text-muted-foreground">
                 <time dateTime={post.date}>
                   {new Date(post.date).toLocaleDateString('en-US', {
@@ -177,14 +177,14 @@ export default function HomePage() {
 
       {/* CTA Section */}
       <section className="border-t border-border bg-muted/30 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center animate-slide-in-up">
           <h2 className="text-balance text-3xl font-bold tracking-tight">
             {"Let's Build Something Together"}
           </h2>
           <p className="mt-4 text-pretty text-lg text-muted-foreground">
             {"I'm always interested in hearing about new projects and opportunities."}
           </p>
-          <Button asChild size="lg" className="mt-8">
+          <Button asChild size="lg" className="mt-8 transition-smooth hover:scale-105" style={{ animation: 'fadeInScale 0.6s ease-out 0.2s both' }}>
             <Link href="/contact">Get in Touch</Link>
           </Button>
         </div>

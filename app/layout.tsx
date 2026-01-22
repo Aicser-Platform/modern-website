@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
-import { DemoHeader } from '@/components/DemoHeader'
 import { Navigation } from '@/components/navigation'
 import { DemoFooter } from '@/components/DemoFooter'
 import './globals.css'
@@ -56,7 +55,6 @@ export default function RootLayout({
       <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex min-h-screen flex-col">
-            <DemoHeader />
             <Navigation />
             <main className="flex-1">{children}</main>
             <DemoFooter />

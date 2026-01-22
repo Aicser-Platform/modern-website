@@ -41,10 +41,12 @@ const timeline = [
   },
 ]
 
+const items = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML/CSS', 'JavaScript', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'REST APIs', 'GraphQL', 'Git', 'Docker', 'Vercel', 'AWS', 'GitHub Actions', 'Figma', 'Agile', 'TDD', 'CI/CD', 'Code Review', 'Documentation', 'Accessibility'];
+
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-12">
+      <div className="mb-12 animate-slide-in-down">
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           About Me
         </h1>
@@ -54,7 +56,7 @@ export default function AboutPage() {
       </div>
 
       {/* Story Section */}
-      <section className="mb-16">
+      <section className="mb-16 animate-slide-in-left">
         <h2 className="mb-6 text-2xl font-bold tracking-tight">My Journey</h2>
         <div className="space-y-4 text-pretty leading-relaxed text-muted-foreground">
           <p>
@@ -73,11 +75,11 @@ export default function AboutPage() {
       </section>
 
       {/* Skills Section */}
-      <section className="mb-16">
+      <section className="mb-16 animate-slide-in-right">
         <h2 className="mb-6 text-2xl font-bold tracking-tight">Skills & Tools</h2>
         <div className="grid gap-6 sm:grid-cols-2">
-          {Object.entries(skills).map(([category, items]) => (
-            <Card key={category}>
+          {Object.entries(skills).map(([category]) => (
+            <Card key={category} className="transition-smooth hover:scale-105">
               <CardContent className="pt-6">
                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-foreground">
                   {category}
@@ -96,11 +98,11 @@ export default function AboutPage() {
       </section>
 
       {/* Experience Timeline */}
-      <section>
+      <section className="animate-slide-in-up">
         <h2 className="mb-6 text-2xl font-bold tracking-tight">Experience</h2>
         <div className="space-y-8">
           {timeline.map((item, index) => (
-            <div key={index} className="relative pl-8 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-border after:absolute after:left-0 after:top-2 after:h-2 after:w-2 after:-translate-x-[3.5px] after:rounded-full after:bg-primary last:before:hidden">
+            <div key={index} className="relative pl-8 transition-smooth hover:scale-105 before:absolute before:left-0 before:top-2 before:h-full before:w-px before:bg-border after:absolute after:left-0 after:top-2 after:h-2 after:w-2 after:-translate-x-[3.5px] after:rounded-full after:bg-primary last:before:hidden" style={{ animation: `slideInLeft 0.6s ease-out ${0.1 * (index + 1)}s both` }}>
               <div className="mb-1 text-sm font-semibold text-primary">{item.year}</div>
               <h3 className="mb-1 text-lg font-semibold">{item.title}</h3>
               <div className="mb-2 text-sm text-muted-foreground">{item.company}</div>
@@ -113,7 +115,7 @@ export default function AboutPage() {
       </section>
 
       {/* Focus Section */}
-      <section className="mt-16 rounded-lg border border-border bg-muted/30 p-8">
+      <section className="mt-16 rounded-lg border border-border bg-muted/30 p-8 animate-fade-in-scale">
         <h2 className="mb-4 text-2xl font-bold tracking-tight">Current Focus</h2>
         <ul className="space-y-2 text-pretty leading-relaxed text-muted-foreground">
           <li>• Building production-ready applications with Next.js 16 and React Server Components</li>

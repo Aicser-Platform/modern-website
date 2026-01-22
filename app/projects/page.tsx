@@ -75,7 +75,7 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-12">
+      <div className="mb-12 animate-slide-in-down">
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           Projects
         </h1>
@@ -85,8 +85,8 @@ export default function ProjectsPage() {
       </div>
 
       <div className="grid gap-8 lg:grid-cols-2">
-        {projects.map((project) => (
-          <Card key={project.id} className="flex flex-col transition-shadow hover:shadow-lg">
+        {projects.map((project, index) => (
+          <Card key={project.id} className="flex flex-col transition-smooth hover:shadow-lg hover:scale-105" style={{ animation: `slideInUp 0.6s ease-out ${0.1 * (index + 1)}s both` }}>
             <CardHeader>
               <CardTitle className="text-balance text-2xl">{project.title}</CardTitle>
               <CardDescription className="text-pretty">{project.description}</CardDescription>
@@ -116,13 +116,13 @@ export default function ProjectsPage() {
               </div>
             </CardContent>
             <CardFooter className="gap-2">
-              <Button asChild variant="outline" size="sm" className="gap-2 bg-transparent">
+              <Button asChild variant="outline" size="sm" className="gap-2 bg-transparent transition-smooth hover:scale-105">
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
                   <Github className="h-4 w-4" />
                   Code
                 </a>
               </Button>
-              <Button asChild size="sm" className="gap-2">
+              <Button asChild size="sm" className="gap-2 transition-smooth hover:scale-105">
                 <a href={project.demo} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="h-4 w-4" />
                   Live Demo

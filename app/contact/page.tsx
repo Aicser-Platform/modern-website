@@ -39,7 +39,7 @@ const socialLinks = [
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-12 text-center">
+      <div className="mb-12 text-center animate-slide-in-down">
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           {"Let's Connect"}
         </h1>
@@ -50,8 +50,8 @@ export default function ContactPage() {
 
       <div className="grid gap-8 lg:grid-cols-3">
         {/* Contact Form */}
-        <div className="lg:col-span-2">
-          <Card>
+        <div className="lg:col-span-2 animate-slide-in-left">
+          <Card className="transition-smooth hover:shadow-lg" style={{ animation: 'slideInUp 0.6s ease-out both' }}>
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
               <CardDescription>
@@ -65,18 +65,19 @@ export default function ContactPage() {
         </div>
 
         {/* Social Links */}
-        <div className="space-y-6">
+        <div className="space-y-6 animate-slide-in-right">
           <div>
             <h2 className="mb-4 text-xl font-semibold">Connect With Me</h2>
             <div className="space-y-3">
-              {socialLinks.map((link) => {
+              {socialLinks.map((link, index) => {
                 const Icon = link.icon
                 return (
                   <Button
                     key={link.name}
                     asChild
                     variant="outline"
-                    className="w-full justify-start gap-3 bg-transparent"
+                    className="w-full justify-start gap-3 bg-transparent transition-smooth hover:scale-105"
+                    style={{ animation: `slideInRight 0.6s ease-out ${0.1 * (index + 1)}s both` }}
                   >
                     <a href={link.href} target="_blank" rel="noopener noreferrer">
                       <Icon className="h-5 w-5" />
@@ -91,7 +92,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <Card className="bg-muted/30">
+          <Card className="bg-muted/30 transition-smooth hover:scale-105" style={{ animation: 'fadeInScale 0.6s ease-out 0.3s both' }}>
             <CardHeader>
               <CardTitle className="text-base">Response Time</CardTitle>
             </CardHeader>
@@ -102,7 +103,7 @@ export default function ContactPage() {
             </CardContent>
           </Card>
 
-          <Card className="bg-muted/30">
+          <Card className="bg-muted/30 transition-smooth hover:scale-105" style={{ animation: 'fadeInScale 0.6s ease-out 0.4s both' }}>
             <CardHeader>
               <CardTitle className="text-base">Open to</CardTitle>
             </CardHeader>

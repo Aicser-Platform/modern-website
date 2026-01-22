@@ -79,7 +79,7 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-12">
+      <div className="mb-12 animate-slide-in-down">
         <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
           Technical Writing
         </h1>
@@ -89,12 +89,12 @@ export default function BlogPage() {
       </div>
 
       <div className="grid gap-8 md:grid-cols-2">
-        {blogPosts.map((post) => (
-          <Card key={post.id} className="group flex flex-col transition-shadow hover:shadow-lg">
+        {blogPosts.map((post, index) => (
+          <Card key={post.id} className="group flex flex-col transition-smooth hover:shadow-lg hover:scale-105" style={{ animation: `slideInUp 0.6s ease-out ${0.1 * (index + 1)}s both` }}>
             <CardHeader>
               <div className="mb-3 flex items-center gap-4 text-sm text-muted-foreground">
                 <div className="flex items-center gap-1.5">
-                  <Calendar className="h-4 w-4" />
+                  <Calendar className="h-4 w-4 animate-float" style={{ animationDelay: '0.2s' }} />
                   <time dateTime={post.date}>
                     {new Date(post.date).toLocaleDateString('en-US', {
                       month: 'long',

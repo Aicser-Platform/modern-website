@@ -66,7 +66,7 @@ export function DemoFooter() {
         
         <div className="mt-8 border-t border-border pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © 2026 AI Studio by Aicser. All rights reserved.
+            © 2026 Aicser Modern Portfolio by Aicser. All rights reserved.
           </p>
         </div>
       </div>

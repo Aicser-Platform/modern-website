@@ -46,37 +46,37 @@ A modern, production-ready developer portfolio template showcasing engineering p
 ### Installation
 
 1. **Clone or download this template**
-   ```bash
+   \`\`\`bash
    # Download from v0.app or use shadcn CLI
    npx shadcn@latest init
-   ```
+   \`\`\`
 
 2. **Install dependencies**
-   ```bash
+   \`\`\`bash
    npm install
    # or
    yarn install
    # or
    pnpm install
-   ```
+   \`\`\`
 
 3. **Run the development server**
-   ```bash
+   \`\`\`bash
    npm run dev
    # or
    yarn dev
    # or
    pnpm dev
-   ```
+   \`\`\`
 
 4. **Open in browser**
-   ```
+   \`\`\`
    http://localhost:3000
-   ```
+   \`\`\`
 
 ## Project Structure
 
-```
+\`\`\`
 /
 ├── app/
 │   ├── page.tsx              # Home page with hero & featured content
@@ -101,20 +101,20 @@ A modern, production-ready developer portfolio template showcasing engineering p
 │   ├── contact-form.tsx      # Contact form component
 │   └── ui/                   # shadcn/ui components
 └── README.md
-```
+\`\`\`
 
 ## Customization Guide
 
 ### 1. Personal Information
 
 **Update metadata in `app/layout.tsx`:**
-```typescript
+\`\`\`typescript
 export const metadata: Metadata = {
   title: 'Your Name | Full-Stack Developer',
   description: 'Your custom description...',
   // ... update other fields
 }
-```
+\`\`\`
 
 **Update content in pages:**
 - `app/page.tsx` - Hero section, tagline, featured projects
@@ -126,18 +126,18 @@ export const metadata: Metadata = {
 ### 2. Styling & Branding
 
 **Customize colors in `app/globals.css`:**
-```css
+\`\`\`css
 :root {
   --primary: oklch(0.25 0 0);     /* Your brand color */
   --accent: oklch(0.95 0 0);      /* Accent color */
   /* ... modify other tokens */
 }
-```
+\`\`\`
 
 **Change fonts in `app/layout.tsx`:**
-```typescript
+\`\`\`typescript
 import { YourFont, YourMonoFont } from 'next/font/google'
-```
+\`\`\`
 
 ### 3. Content Management
 
@@ -161,7 +161,7 @@ import { YourFont, YourMonoFont } from 'next/font/google'
 Replace placeholder content with your actual work:
 
 **Projects:**
-```typescript
+\`\`\`typescript
 const projects = [
   {
     title: "Your Real Project",
@@ -172,7 +172,7 @@ const projects = [
     link: "https://project-url.com"
   }
 ]
-```
+\`\`\`
 
 **Blog Posts:**
 - Add real articles in `app/blog/[slug]/page.tsx`
@@ -184,13 +184,13 @@ const projects = [
 ### Deploy to Vercel (Recommended)
 
 1. **Push to GitHub**
-   ```bash
+   \`\`\`bash
    git init
    git add .
    git commit -m "Initial commit"
    git remote add origin your-repo-url
    git push -u origin main
-   ```
+   \`\`\`
 
 2. **Deploy on Vercel**
    - Visit [vercel.com/new](https://vercel.com/new)
@@ -218,28 +218,28 @@ Currently no environment variables required. Add as needed for:
 - Database connections
 
 Create `.env.local`:
-```bash
+\`\`\`bash
 NEXT_PUBLIC_SITE_URL=https://yourportfolio.com
 # Add other variables as needed
-```
+\`\`\`
 
 ## Development Tips
 
 ### Adding New Pages
-```bash
+\`\`\`bash
 # Create new route
 mkdir app/new-page
 touch app/new-page/page.tsx
-```
+\`\`\`
 
 ### Adding shadcn Components
-```bash
+\`\`\`bash
 # Add new UI components
 npx shadcn@latest add [component-name]
-```
+\`\`\`
 
 ### Type Safety
-```typescript
+\`\`\`typescript
 // Define types for your content
 type Project = {
   title: string
@@ -247,7 +247,7 @@ type Project = {
   tech: string[]
   link?: string
 }
-```
+\`\`\`
 
 ## Performance Optimizations
 
